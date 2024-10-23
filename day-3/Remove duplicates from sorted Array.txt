@@ -1,0 +1,19 @@
+class Solution {
+  public:
+    int remove_duplicate(vector<int> &a) {
+        // code here
+        int n=a.size();
+        int no=0,index=0;
+        
+        for(int i=0;i<n;i++)
+        {
+            if(no!=a[i])
+            {
+                a[index]=a[i];
+                no=a[i];
+                index++;
+            }
+        }
+        return index;
+    }
+};
