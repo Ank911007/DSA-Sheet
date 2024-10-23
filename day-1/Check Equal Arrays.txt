@@ -1,0 +1,28 @@
+class Solution {
+  public:
+    // Function to check if two arrays are equal or not.
+    bool check(vector<int>& arr1, vector<int>& arr2) {
+        // code here
+        sort(arr1.begin(),arr1.end());
+        sort(arr2.begin(),arr2.end());
+        
+        int a1=arr1.size();
+        int a2=arr2.size();
+        
+        if(a1!=a2)
+        return false;
+        
+        int a1_sum=0,a2_sum=0;
+        
+        for(int i=0;i<a1;i++)
+        {
+            a1_sum=a1_sum+arr1[i];
+            a2_sum=a2_sum+arr2[i];
+        }
+        
+        if(a1_sum==a2_sum)
+        return true;
+        else
+        return false;
+    }
+};
