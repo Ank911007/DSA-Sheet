@@ -1,0 +1,32 @@
+// ***************** LOGIC-1 *************************
+  public:
+    vector<int> binSort(int n, vector<int> &arr) {
+        // code here
+        int c_zero=0;
+        int c_one=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]==0)
+                c_zero++;
+            else
+                c_one++;
+        }
+        
+        for(int i=0;i<c_zero;i++)
+            arr[i]=0;
+        for(int i=c_zero;i<n;i++)
+            arr[i]=1;
+        return arr;
+    }
+};
+
+
+// ******************* LOGIC-2*****************************
+class Solution {
+  public:
+    vector<int> binSort(int n, vector<int> &arr) {
+        // code here
+        sort(arr.begin(),arr.end());
+        return arr;
+    }
+};
