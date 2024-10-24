@@ -1,0 +1,30 @@
+class Solution {
+  public:
+    // Function to find equilibrium point in the array.
+    // arr: input array
+    int equilibriumPoint(vector<long long> &arr) {
+        // Your code here
+        int n=arr.size();
+        int ls=0,rs=0;
+        
+        for(int i=0;i<n;i++)
+            rs=rs+arr[i];
+            
+      
+        
+        for(int j=0;j<n;j++)
+        {
+            rs=rs-arr[j];
+            if(j-1>=0)
+                ls=ls+arr[j-1];
+            else
+                ls=ls;
+            
+            if(ls==rs)
+                return j+1;
+        }
+        
+        return -1;
+        
+    }
+};
